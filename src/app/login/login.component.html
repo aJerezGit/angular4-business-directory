@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md offset-4 col-md-4">
+            <div class="card card-body bg-light">
+                <label>Email</label>
+                <input type="email" class="form-control" [(ngModel)]="loginObject.email">
+                <br />
+                <label>Contraseña</label>
+                <input type="password" class="form-control" [(ngModel)]="loginObject.password">
+                <hr />
+                <button class="btn btn-warning btn-block" (click)="login()">Login con Email</button>
+                <button class="btn btn-primary btn-block" (click)="facebookLogin()">Login con Fb</button>
+                <button class="btn btn-default btn-block">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" routerLink="/">PlatziSquare!</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li routerLinkActive="active" class="nav-item">
+              <a class="nav-link" routerLink="/lugares">Inicio <span class="sr-only">(current)</span></a>
+            </li>
+            <li routerLinkActive="active" class="nav-item">
+              <a class="nav-link" routerLink="/detalle/1">Detalle</a>
+            </li>            
+            <li routerLinkActive="active" class="nav-item">
+              <a class="nav-link" routerLink="/contacto">Contacto</a>
+            </li>            
+          </ul>
+          <form class="form-inline my-2 my-lg-0" *ngIf="!loggedIn" >
+            <button class="btn btn-outline-success my-2 mx-1" type="submit" routerLink="/login">login</button>
+            <button class="btn btn-outline-success my-2 mx-1" type="submit" routerLink="/registro">Register</button>
+          </form>
+          <form class="form-inline my-2 my-lg-0" *ngIf="loggedIn" >
+              <h4 class="nav-link light">{{email}} </h4>
+              <button class="btn btn-outline-success my-2 mx-1" type="submit" (click)="logout()">Logout</button>
+            </form>
+        </div>
+      </nav>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+agm-map {
+    height: 300px;
+}
+.numero_par{
+    background-color: aliceblue;
+    color: blue;
+}
+
+.contact_page {
+    background-image: url("./contact.jpg");
+    height: 100%;
+}
+
+#cuadrado {
+    width: 200px;
+    height: 200px;
+    background-color:lightskyblue;
+}
+
+.padding {
+    padding: 10px;
+    margin-bottom: 10px;
+}

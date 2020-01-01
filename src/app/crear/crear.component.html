@@ -1,0 +1,70 @@
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a routerLink="/lugares">Lugares</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Crear Lugar</li>
+        </ol>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 card card-body bg-light">
+                <h3>Crear Lugar</h3>
+                <label>Nombre</label>
+                <input type="text" class="form-control" [(ngModel)]="lugar.nombre" />
+                <br/>
+                <label>Distancia</label>
+                <input type="email" class="form-control" [(ngModel)]="lugar.distancia" />
+                <br/>
+                <label>Cercania</label>
+                <input type="email" class="form-control" [(ngModel)]="lugar.cercania" />
+                <br/>
+                <label>Descripcion</label>
+                <textarea class="form-control" [(ngModel)]="lugar.descripcion"></textarea>
+                <br/>
+                <label>Plan</label>
+                <select name="ddlPlan" class="form-control" [(ngModel)]="lugar.plan">
+                <option value="gratuito">Gratuito</option>
+                <option value="pagado">Pagado</option>
+                </select>
+                <br/>
+                <h3>Informacion de ubicacion</h3>
+                <div class="card card-body">
+                    <form>
+                        <h3>Buscar direccion en Google Maps</h3>
+                        <input [formControl]="searchField" class="form-control" />
+                    </form>
+                    <ul class="list-group">
+                        <li class="list-group-item" *ngFor="let result of results$ | async" (click)="seleccionarDireccion(result)">{{result.formatted_address}}</li>
+                    </ul>
+                </div>
+                <label>Direccion</label>
+                <input type="email" class="form-control" [(ngModel)]="lugar.direccion" />
+                <br/>
+                <label>Ciudad</label>
+                <input type="email" class="form-control" [(ngModel)]="lugar.ciudad" />
+                <br/>
+                <label>Pais</label>
+                <input type="email" class="form-control" [(ngModel)]="lugar.pais" />
+                <br/>
+                <hr/>
+                <br/>
+                <button class="btn btn-outline-primary" (click)="guardarLugar()">Enviar</button>
+                <br/>
+                <button class="btn btn-outline-dark" routerLink="/lugares">Cancelar</button>
+            </div>
+            <div class="col-md-4 card card-body bg-light" style="margin-left: 10%">
+                <h3>Ubicación</h3>
+                <agm-map [latitude]="lat" [longitude]="lng">
+                    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+                </agm-map>
+                <b>Dirección:</b> 
+                <p>Una estupenda direccion</p>
+                <b>Telefono:</b> 
+                <p>Un estupendo numero</p>
+                <b>Email:</b> 
+                <p>Un Estupendo Email</p>
+            </div>
+        </div>
+        
+    </div>
